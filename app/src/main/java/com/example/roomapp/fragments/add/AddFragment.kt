@@ -51,11 +51,11 @@ class AddFragment : Fragment() {
             )
             // Add Data to Database
             mUserViewModel.addUser(user)
-            Toast.makeText(requireContext(), "Successfully added!", Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(), "Sukses di Tambahkan", Toast.LENGTH_LONG).show()
             // Navigate Back
             findNavController().navigate(R.id.action_addFragment_to_listFragment)
         }else{
-            Toast.makeText(requireContext(), "Please fill out all fields.", Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(), "Diisi dulu semuanya", Toast.LENGTH_LONG).show()
         }
     }
 

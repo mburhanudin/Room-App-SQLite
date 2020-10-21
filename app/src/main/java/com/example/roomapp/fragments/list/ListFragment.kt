@@ -63,12 +63,12 @@ class ListFragment : Fragment() {
             mUserViewModel.deleteAllUsers()
             Toast.makeText(
                 requireContext(),
-                "Successfully removed everything",
+                "Sukses hapus semuanya",
                 Toast.LENGTH_SHORT).show()
         }
-        builder.setNegativeButton("No") { _, _ -> }
-        builder.setTitle("Delete everything?")
-        builder.setMessage("Are you sure you want to delete everything?")
+        builder.setNegativeButton("Tidak") { _, _ -> }
+        builder.setTitle("Hapus Semuanya?")
+        builder.setMessage("Kamu Yakin Hapus Semuanya?")
         builder.create().show()
     }
 }

@@ -56,11 +56,11 @@ class UpdateFragment : Fragment() {
             val updatedUser = User(args.currentUser.id, firstName, lastName, age)
             // Update Current User
             mUserViewModel.updateUser(updatedUser)
-            Toast.makeText(requireContext(), "Updated Successfully!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Update Sukses", Toast.LENGTH_SHORT).show()
             // Navigate Back
             findNavController().navigate(R.id.action_updateFragment_to_listFragment)
         } else {
-            Toast.makeText(requireContext(), "Please fill out all fields.", Toast.LENGTH_SHORT)
+            Toast.makeText(requireContext(), "Semuanya diisi dulu", Toast.LENGTH_SHORT)
                 .show()
         }
     }
@@ -82,17 +82,17 @@ class UpdateFragment : Fragment() {
 
     private fun deleteUser() {
         val builder = AlertDialog.Builder(requireContext())
-        builder.setPositiveButton("Yes") { _, _ ->
+        builder.setPositiveButton("Ya") { _, _ ->
             mUserViewModel.deleteUser(args.currentUser)
             Toast.makeText(
                 requireContext(),
-                "Successfully removed: ${args.currentUser.firstName}",
+                "Sukses Di Hapus: ${args.currentUser.firstName}",
                 Toast.LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_updateFragment_to_listFragment)
         }
-        builder.setNegativeButton("No") { _, _ -> }
-        builder.setTitle("Delete ${args.currentUser.firstName}?")
-        builder.setMessage("Are you sure you want to delete ${args.currentUser.firstName}?")
+        builder.setNegativeButton("Tidak") { _, _ -> }
+        builder.setTitle("Hapus ${args.currentUser.firstName}?")
+        builder.setMessage("Yakin Di Hapus Semua ${args.currentUser.firstName}?")
         builder.create().show()
     }
 }
